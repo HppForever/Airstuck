@@ -1,6 +1,6 @@
 class CAirStuck
 {
-public: void Set_MoveValue(float forwardmove, float sidemove)
+private: void Set_MoveValue(float forwardmove, float sidemove)
 	{
 		usercmd_s* pCmd = cmd::get();
 
@@ -8,7 +8,7 @@ public: void Set_MoveValue(float forwardmove, float sidemove)
 		pCmd->sidemove = sidemove;
 	}
 
-private: void CL_CreateMove()
+public: void CL_CreateMove()
 	{
 		float AirStuck_POWER = 0;
 
