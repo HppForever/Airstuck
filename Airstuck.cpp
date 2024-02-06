@@ -17,11 +17,14 @@ public: void CL_CreateMove()
 		if ((g_Local.m_bIsDead || g_Local.m_iTeam == SPECTATOR) || (cvar.movement.airstuck_key && !state.airstuck_active))
 			return;
 
-		if (cvar.movement.airstuck_power == 1) AirStuck_POWER = 0.955; 
-		if (cvar.movement.airstuck_power == 2) AirStuck_POWER = 0.975;
-		if (cvar.movement.airstuck_power == 3) AirStuck_POWER = 0.985;
-		if (cvar.movement.airstuck_power == 4) AirStuck_POWER = 0.999;
-		if (cvar.movement.airstuck_power == 5) AirStuck_POWER = 0.9999;
+		switch (cvar.movement.airstuck_power)
+		{
+			case 1: AirStuck_POWER = 0.955; break;
+			case 2: AirStuck_POWER = 0.975; break;
+			case 3: AirStuck_POWER = 0.985; break;
+			case 4: AirStuck_POWER = 0.999; break;
+			case 5: AirStuck_POWER = 0.9999; break;
+		}
 
 		if (cvar.movement.airstuck_enabled && cvar.movement.airstuck_key)
 		{
