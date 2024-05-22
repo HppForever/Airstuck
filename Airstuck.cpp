@@ -1,11 +1,11 @@
 class AirStuck
 {
-void Set_MoveValue(float forwardmove, float sidemove)
+void Set_MoveValue(float ForwardMove, float SideMove)
 {
 	usercmd_s* pCmd = cmd::get();
 
-	pCmd->forwardmove = forwardmove;
-	pCmd->sidemove = sidemove;
+	pCmd->forwardmove = ForwardMove;
+	pCmd->sidemove = SideMove;
 }
 
 public: void CL_CreateMove()
